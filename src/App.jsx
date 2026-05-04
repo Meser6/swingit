@@ -1,0 +1,89 @@
+import { useEffect, useRef, useState } from "react";
+import "./App.css";
+import { Footer } from "./components/Footer.jsx";
+import { Header } from "./components/Header.jsx";
+import { Hero } from "./components/Hero.jsx";
+import { Modal } from "./components/Modal.jsx";
+import { BackgroundThreads } from "./components/BackgroundThreads.jsx";
+import { TabPanels } from "./components/TabPanels.jsx";
+import { staticModals } from "./data/modalCopy.js";
+import { offerTrainings } from "./data/offerTrainings.js";
+import { getTrainingDetail } from "./data/trainingDetails.js";
+import { TrainingModalBody } from "./components/TrainingModalBody.jsx";
+import { TrainingConspectButton } from "./components/TrainingConspectButton.jsx";
+
+export default function App() {
+  const [tab, setTab] = useState("start");
+  const [modal, setModal] = useState(null);
+  const trainingPdfTargetRef = useRef(null);
+
+  const openStatic = (key) => {
+    const d = staticModals[key];
+    if (d) setModal({ kind: "static", title: d.title, bodyHtml: d.bodyHtml });
+  };
+
+  const openTraining = (trainingId) => {
+    if (offerTrainings.some((t) => t.id === trainingId)) {
+      setModal({ kind: "training", trainingId });
+    }
+  };
+
+  const closeModal = () => setModal(null);
+
+  const modalTitle =
+    modal?.kind === "training"
+      ? offerTrainings.find((t) => t.id === modal.trainingId)?.title ?? ""
+      : modal?.title ?? "";
+
+  const trainingItem =
+    modal?.kind === "training"
+      ? offerTrainings.find((t) => t.id === modal.trainingId)
+      : null;
+  const trainingDetail =
+    modal?.kind === "training" && modal.trainingId
+      ? getTrainingDetail(modal.trainingId)
+      : null;
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, [tab]);
+
+  return (
+    <div id="top" className="page-shell">
+      <div className="bg-gradient" aria-hidden="true" />
+      <BackgroundThreads />
+      <Header
+        activeTab={tab}
+        onTab={setTab}
+        onOpenContact={() => openStatic("contact")}
+        onBrandClick={() => {
+          setTab("start");
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }}
+      />
+      <main className={tab === "start" ? "" : "main--subpage"}>
+        {tab === "start" && <Hero />}
+        <TabPanels activeTab={tab} onOpenModal={openStatic} onOpenTraining={openTraining} />
+      </main>
+      <Footer />
+      <Modal
+        open={!!modal}
+        onClose={closeModal}
+        title={modalTitle}
+        variant={modal?.kind === "training" ? "sheet" : "default"}
+        headerTrailing={
+          modal?.kind === "training" ? (
+            <TrainingConspectButton pdfTargetRef={trainingPdfTargetRef} item={trainingItem} />
+          ) : null
+        }
+      >
+        {modal?.kind === "static" && (
+          <div dangerouslySetInnerHTML={{ __html: modal.bodyHtml }} />
+        )}
+        {modal?.kind === "training" && (
+          <TrainingModalBody ref={trainingPdfTargetRef} item={trainingItem} detail={trainingDetail} />
+        )}
+      </Modal>
+    </div>
+  );
+}
