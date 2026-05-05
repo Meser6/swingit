@@ -1,0 +1,70 @@
+{
+  "header": {
+    "brandAriaLabel": "Compas — strona główna",
+    "cta": "Napisz do mnie",
+    "navAriaLabel": "Sekcje strony",
+    "logoTitle": "Compas",
+    "logoSubtitle": "dr Syrek"
+  },
+  "footer": {
+    "copyright": "© {{year}} Compas · dr Syrek",
+    "instagramAria": "Profil Instagram Compas",
+    "linkedinAria": "Profil LinkedIn — Daniel Syrek",
+    "instagram": "Instagram",
+    "linkedin": "LinkedIn",
+    "showKeys": "Pokaż klucze",
+    "hideKeys": "Ukryj klucze",
+    "toggleKeysTitle": "Przełącz widok: treść strony albo klucze z plików JSON w src/content"
+  },
+  "modal": {
+    "closeAria": "Zamknij"
+  },
+  "offer": {
+    "filterToolbarAria": "Filtr typu szkolenia",
+    "typeLabel": "Typ szkolenia",
+    "empty": "Brak szkoleń w tej kategorii — wybierz inny typ albo „Wszystkie”.",
+    "recommendedPrefix": "Polecane. ",
+    "cardAriaSuffix": "Kliknij lub Enter, aby otworzyć szczegóły.",
+    "cta": "Szczegóły",
+    "ribbon": "Polecamy",
+    "paginationAria": "Strony listy szkoleń",
+    "prev": "Poprzednia",
+    "next": "Następna"
+  },
+  "trainingModal": {
+    "notFound": "Nie znaleziono szczegółów tej pozycji. Odśwież stronę lub skontaktuj się bezpośrednio.",
+    "orgHeading": "Informacje organizacyjne",
+    "orgFallback": "Szczegóły organizacyjne ustalamy indywidualnie przy zapytaniu ofertowym.",
+    "introHeading": "Charakter i zakres",
+    "programHeading": "Program",
+    "programFallback": "Ramowy program ustalamy po rozpoznaniu potrzeb zamawiającego i dopasowujemy do kontekstu grupy.",
+    "compHeading": "Zdobyte kompetencje",
+    "compFallback": "Efekty uczenia się precyzujemy w kontrakcie szkolenia, po uzgodnieniu celów biznesowych i uczestników.",
+    "labels": {
+      "duration": "Czas trwania",
+      "price": "Orientacyjna cena",
+      "maxParticipants": "Liczba uczestników",
+      "target": "Grupa docelowa"
+    }
+  },
+  "trustedBy": {
+    "heading": "Zaufali nam",
+    "regionAria": "Logotypy partnerów, przewijane automatycznie"
+  },
+  "aboutCarousel": {
+    "regionAria": "Galeria zdjęć",
+    "dotsAria": "Przewijanie galerii po trzy zdjęcia",
+    "slideRole": "slajd",
+    "slideLabel": "Zdjęcia {{n}} z {{total}}",
+    "dotLabel": "Zdjęcia {{n}} z {{total}} (po trzy na ekranie)",
+    "openLightboxAria": "Otwórz zdjęcie na pełnym ekranie: {{alt}}",
+    "lightboxDialogAria": "Powiększone zdjęcie",
+    "lightboxCloseAria": "Zamknij powiększone zdjęcie"
+  },
+  "pdf": {
+    "generating": "Generowanie…",
+    "downloadConspect": "Pobierz konspekt",
+    "errorAlert": "Nie udało się wygenerować pliku PDF. Spróbuj ponownie za chwilę.",
+    "contactFooterTitle": "Kontakt"
+  }
+}

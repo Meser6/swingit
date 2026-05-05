@@ -33,21 +33,24 @@ export async function downloadTrainingPdf(element, filename) {
   const pdf = new jsPDF({ orientation: "p", unit: "mm", format: "a4" });
   const pageWidth = pdf.internal.pageSize.getWidth();
   const pageHeight = pdf.internal.pageSize.getHeight();
-  const imgWidth = pageWidth;
-  const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
-  let heightLeft = imgHeight;
-  let position = 0;
+  /** Jedna strona A4: przeskaluj całość, żeby zmieściła się z marginesem (bez cięcia na strony). */
+  const marginMm = 6;
+  const maxW = pageWidth - 2 * marginMm;
+  const maxH = pageHeight - 2 * marginMm;
+  const imgAspect = canvas.width / canvas.height;
 
-  pdf.addImage(imgData, "JPEG", 0, position, imgWidth, imgHeight);
-  heightLeft -= pageHeight;
-
-  while (heightLeft > 0) {
-    position = heightLeft - imgHeight;
-    pdf.addPage();
-    pdf.addImage(imgData, "JPEG", 0, position, imgWidth, imgHeight);
-    heightLeft -= pageHeight;
+  let drawW = maxW;
+  let drawH = drawW / imgAspect;
+  if (drawH > maxH) {
+    drawH = maxH;
+    drawW = drawH * imgAspect;
   }
+
+  const x = (pageWidth - drawW) / 2;
+  const y = marginMm + (maxH - drawH) / 2;
+
+  pdf.addImage(imgData, "JPEG", x, y, drawW, drawH);
 
   pdf.save(filename);
 }

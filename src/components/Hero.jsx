@@ -1,22 +1,27 @@
-import { IMG } from "../constants/images";
+import { IMG, imgPair } from "../constants/images";
 import { Reveal } from "../hooks/Reveal";
 import { SmartImage } from "./SmartImage";
+import { CONTENT } from "../lib/t.js";
+import { useContentStrings } from "../context/ContentStringsContext.jsx";
 
 export function Hero() {
+  const { tx } = useContentStrings();
+  const p = CONTENT.pages.hero;
+
   return (
     <section className="hero container" id="hero">
       <div className="hero-grid">
         <Reveal>
-          <h1>Nauczam, wykładam i szkolę — z godnością i energią</h1>
+          <h1>{tx("pages.hero.title", p.title)}</h1>
           <p className="hero-lead">
-            Jestem <strong style={{ color: "var(--ink)", fontWeight: 700 }}>dr Syrek</strong>. Tworzę
-            przestrzeń, w której wiedza spotyka się z praktyką: od wykładów i warsztatów po tutoring.
-            Jak na kompasie — ważny jest kierunek, który wspólnie ustalamy.
+            {tx("pages.hero.leadBefore", p.leadBefore)}
+            <strong style={{ color: "var(--ink)", fontWeight: 700 }}>{tx("pages.hero.leadHighlight", p.leadHighlight)}</strong>
+            {tx("pages.hero.leadAfter", p.leadAfter)}
           </p>
-          <div className="tags" aria-label="Role">
-            {["edukator", "pedagog", "wykładowca", "szkoleniowiec", "tutor"].map((label) => (
+          <div className="tags" aria-label={tx("pages.hero.tagsAria", p.tagsAria)}>
+            {p.tags.map((label, i) => (
               <span key={label} className="tag">
-                {label}
+                {tx(`pages.hero.tags[${i}]`, label)}
               </span>
             ))}
           </div>
@@ -24,16 +29,17 @@ export function Hero() {
         <Reveal>
           <div className="hero-visual media-frame media-frame--4-3">
             <SmartImage
-              primary={IMG.heroMain}
-              fallback={IMG.heroPlaceholder}
-              alt="Wizual — rozwój i edukacja"
+              imageKey="hero"
+              {...imgPair(IMG.hero)}
+              alt={tx("pages.hero.visualAlt", p.visualAlt)}
               width={800}
               height={600}
               loading="eager"
             />
             <div className="hero-badge">
-              ♥️ Z przyjemnością dzielę się ofertą — na żywo i online. Śledź też mój profil{" "}
-              <strong>@compas.dr.syrek</strong> na Instagramie.
+              {tx("pages.hero.badgeBefore", p.badgeBefore)}
+              <strong>{tx("pages.hero.badgeStrong", p.badgeStrong)}</strong>
+              {tx("pages.hero.badgeAfter", p.badgeAfter)}
             </div>
           </div>
         </Reveal>

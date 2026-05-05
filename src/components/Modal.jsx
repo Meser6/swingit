@@ -1,16 +1,19 @@
 import { isValidElement, useEffect, useRef } from "react";
+import { useContentStrings } from "../context/ContentStringsContext.jsx";
 
 export function Modal({ open, onClose, title, children, variant = "default", headerTrailing = null }) {
+  const { t } = useContentStrings();
   const closeBtnRef = useRef(null);
   const lastFocusRef = useRef(null);
+  const closeLabel = t("ui.modal.closeAria");
 
   useEffect(() => {
     if (!open) return;
     lastFocusRef.current = document.activeElement;
-    const t = setTimeout(() => closeBtnRef.current?.focus(), 0);
+    const focusTimer = setTimeout(() => closeBtnRef.current?.focus(), 0);
     document.body.style.overflow = "hidden";
     return () => {
-      clearTimeout(t);
+      clearTimeout(focusTimer);
       document.body.style.overflow = "";
       const prev = lastFocusRef.current;
       if (prev && typeof prev.focus === "function") prev.focus();
@@ -52,7 +55,7 @@ export function Modal({ open, onClose, title, children, variant = "default", hea
                 type="button"
                 ref={closeBtnRef}
                 className="modal-close modal-close--white"
-                aria-label="Zamknij"
+                aria-label={closeLabel}
                 onClick={onClose}
               >
                 ×
@@ -63,7 +66,7 @@ export function Modal({ open, onClose, title, children, variant = "default", hea
               type="button"
               ref={closeBtnRef}
               className="modal-close"
-              aria-label="Zamknij"
+              aria-label={closeLabel}
               onClick={onClose}
             >
               ×

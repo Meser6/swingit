@@ -1,217 +1,46 @@
-import { IMG } from "../constants/images.js";
+import offerData from "../content/offer.json";
 
-/** Przyciski filtrów: „Wszystkie” + typy (łącznie 10 kategorii + wszystkie). */
-export const offerFilterTypes = [
-  { id: "all", label: "Wszystkie" },
-  { id: "grupowe", label: "Warsztaty grupowe" },
-  { id: "modulowe", label: "Programy modułowe" },
-  { id: "tutoring", label: "Tutoring 1:1" },
-  { id: "kompetencje", label: "Kompetencje miękkie" },
-  { id: "komunikacja", label: "Komunikacja i wystąpienia" },
-  { id: "kultura", label: "Kultura zespołu i onboarding" },
-  { id: "online", label: "Online / hybryda" },
-  { id: "akademickie", label: "Uczelnia i dydaktyka" },
-  { id: "strategia", label: "Strategia i zmiana" },
-];
+const IMAGES_PUBLIC_PREFIX = "/images";
 
-const im = (primaryKey, fallbackKey) => ({
-  primary: IMG[primaryKey],
-  fallback: IMG[fallbackKey],
-});
+/**
+ * Rozwiązuje odniesienie do grafiki:
+ * - `https://…` / `http://…` — bez zmian
+ * - `/…` — plik z `public/` (np. `/images/…`)
+ * - inne (np. `oferta/2025/zdjecie.jpg`) — `public/images/…` → URL `/images/oferta/2025/zdjecie.jpg`
+ */
+function resolveMediaRef(ref) {
+  if (ref == null || ref === "") return "";
+  const s = String(ref).trim();
+  if (/^https?:\/\//i.test(s)) return s;
+  if (s.startsWith("/")) return s;
+  return `${IMAGES_PUBLIC_PREFIX}/${s.replace(/^\/+/, "")}`;
+}
 
-/** Lista szkoleń — ceny orientacyjne; podmień w pliku. Pole `price` = krótki tekst w kafelku. */
-export const offerTrainings = [
-  {
-    id: "warsztat-dzien",
-    title: "Warsztat jednodniowy",
-    summary: "Dzień pełen ćwiczeń dla zespołu: diagnoza na starcie, praca w parach, podsumowanie z planem na 30 dni.",
-    typeId: "grupowe",
-    images: im("pricingLeft", "pricingLeftPh"),
-    modalKey: "offer-a",
-    price: "4 500 zł",
-    recommended: true,
-  },
-  {
-    id: "program-modulowy",
-    title: "Program modułowy",
-    summary: "Kilka spotkań rozłożonych w czasie: zadania między modułami i krótki kontakt mailowy.",
-    typeId: "modulowe",
-    images: im("featuresRight", "featuresRightPh"),
-    modalKey: "offer-b",
-    price: "8 900 zł",
-    recommended: true,
-  },
-  {
-    id: "tutoring-1",
-    title: "Tutoring 1:1",
-    summary: "Indywidualnie: egzaminy, prezentacje, praca pisemna, przygotowanie do wystąpień i plan nauki.",
-    typeId: "tutoring",
-    images: im("pricingRight", "pricingRightPh"),
-    modalKey: "offer-c",
-    price: "280 zł / 60 min",
-    recommended: true,
-  },
-  {
-    id: "feedback-krytyka",
-    title: "Feedback i trudna rozmowa",
-    summary: "Ćwiczenia na żywo: jak dawać i mieć feedback bez eskalacji — język, granice, kontrakt rozmowy.",
-    typeId: "kompetencje",
-    images: im("landingLeft", "landingLeftPh"),
-    modalKey: "offer-generic",
-    price: "3 200 zł",
-  },
-  {
-    id: "prezentacja",
-    title: "Prezentacja bez „sztywnienia”",
-    summary: "Struktura wystąpienia, praca z trema i salą, Q&A — od elevator pitch po dłuższy wykład.",
-    typeId: "komunikacja",
-    images: im("heroMain", "heroPlaceholder"),
-    modalKey: "offer-generic",
-    price: "2 600 zł",
-  },
-  {
-    id: "onboarding",
-    title: "Onboarding nowych osób",
-    summary: "Scenariusz pierwszych tygodni, buddy, checklisty i małe rytuały, żeby nowa osoba weszła w zespół.",
-    typeId: "kultura",
-    images: im("featuresLeft", "featuresLeftPh"),
-    modalKey: "offer-generic",
-    price: "3 800 zł",
-  },
-  {
-    id: "sprint-2dni",
-    title: "Sprint warsztatowy (2 dni)",
-    summary: "Głębszy zakres: dzień na diagnozę i prototyp, dzień na wdrożenie i plan działań.",
-    typeId: "grupowe",
-    images: im("featuresRight", "featuresRightPh"),
-    modalKey: "offer-a",
-    price: "8 200 zł",
-  },
-  {
-    id: "akademia-lider",
-    title: "Akademia lidera (moduły)",
-    summary: "Rola managera, delegowanie, 1:1, konflikt — rozłożone w czasie z zadaniami w pracy.",
-    typeId: "modulowe",
-    images: im("pricingLeft", "pricingLeftPh"),
-    modalKey: "offer-b",
-    price: "11 500 zł",
-    recommended: true,
-  },
-  {
-    id: "egzamin-pisemny",
-    title: "Przygotowanie do egzaminu / pracy pisemnej",
-    summary: "Plan nauki, outline, redakcja i próby czasowe — pod Twój termin i format.",
-    typeId: "tutoring",
-    images: im("registerRight", "registerRightPh"),
-    modalKey: "offer-c",
-    price: "240 zł / 60 min",
-  },
-  {
-    id: "asertywnosc",
-    title: "Asertywność w zespole",
-    summary: "Granice, „nie”, proszenie o wsparcie i konwersacje między działami bez walki o rację.",
-    typeId: "kompetencje",
-    images: im("pricingRight", "pricingRightPh"),
-    modalKey: "offer-generic",
-    price: "3 100 zł",
-  },
-  {
-    id: "storytelling",
-    title: "Storytelling w biznesie",
-    summary: "Jak ułożyć narrację projektu albo zmiany tak, żeby sala nie „wyłączyła się” po trzech slajdach.",
-    typeId: "komunikacja",
-    images: im("landingLeft", "landingLeftPh"),
-    modalKey: "offer-generic",
-    price: "2 900 zł",
-  },
-  {
-    id: "integracja",
-    title: "Integracja z sensem",
-    summary: "Krótkie formaty na budowanie zaufania — bez przymusu „pokazowej” zabawy.",
-    typeId: "kultura",
-    images: im("heroMain", "heroPlaceholder"),
-    modalKey: "offer-generic",
-    price: "2 400 zł",
-  },
-  {
-    id: "design-thinking",
-    title: "Design thinking na sali",
-    summary: "Od problemu do prototypu w jednym dniu — ćwiczenia dla zespołów produktowych i HR.",
-    typeId: "grupowe",
-    images: im("featuresLeft", "featuresLeftPh"),
-    modalKey: "offer-a",
-    price: "5 200 zł",
-  },
-  {
-    id: "mikro-moduly",
-    title: "Mikromoduły dla zespołu",
-    summary: "Krótkie spotkania w cyklu + materiały do przerobienia między slotami.",
-    typeId: "modulowe",
-    images: im("pricingRight", "pricingRightPh"),
-    modalKey: "offer-b",
-    price: "6 400 zł",
-  },
-  {
-    id: "plan-nauki",
-    title: "Plan nauki i nawyki",
-    summary: "Indywidualnie: rozkładasz cel na tygodnie, testujesz metody i zostajesz z checklistą.",
-    typeId: "tutoring",
-    images: im("featuresRight", "featuresRightPh"),
-    modalKey: "offer-c",
-    price: "pakiet 1 800 zł",
-  },
-  {
-    id: "zespol-rozproszony",
-    title: "Zespół w 100% zdalny",
-    summary: "Ćwiczenia i moderacja pod kamerą: równe głosy, energia sali, asynchroniczne zadania domowe.",
-    typeId: "online",
-    images: im("registerRight", "registerRightPh"),
-    modalKey: "offer-generic",
-    price: "3 600 zł",
-  },
-  {
-    id: "hybryda-mix",
-    title: "Hybryda: sala + zdalni",
-    summary: "Jak prowadzić ćwiczenia, gdy część osób jest na miejscu, a część łączy się z biur domowych.",
-    typeId: "online",
-    images: im("heroMain", "heroPlaceholder"),
-    modalKey: "offer-generic",
-    price: "4 100 zł",
-  },
-  {
-    id: "wyklad-interaktywny",
-    title: "Wykład z pętlą feedbacku",
-    summary: "Dla grup akademickich: merytoryka + krótkie pytania, sondy i przerwy na pytańce — bez monologu do końca bloku.",
-    typeId: "akademickie",
-    images: im("landingLeft", "landingLeftPh"),
-    modalKey: "offer-generic",
-    price: "2 200 zł",
-  },
-  {
-    id: "obrona-praca",
-    title: "Przygotowanie do obrony / recenzji",
-    summary: "Struktura prezentacji, antycypacja pytań komisji i stress-management przed wejściem na salę.",
-    typeId: "akademickie",
-    images: im("pricingRight", "pricingRightPh"),
-    modalKey: "offer-generic",
-    price: "320 zł / 60 min",
-  },
-  {
-    id: "cele-prior",
-    title: "Kaskada celów i ćwiartka Eisenhowera",
-    summary: "Warsztat dla zespołów: wizja kwartalna, „quick wins”, porządek zadań bez listy na sześć stron.",
-    typeId: "strategia",
-    images: im("pricingLeft", "pricingLeftPh"),
-    modalKey: "offer-generic",
-    price: "3 900 zł",
-  },
-  {
-    id: "mapa-zmiany",
-    title: "Mapa zmiany po reorganizacji",
-    summary: "Kim jest dotknięta zmiana, jak komunikować etapy i zebrać sygnały z linii — bez chaosu i plotek.",
-    typeId: "strategia",
-    images: im("featuresLeft", "featuresLeftPh"),
-    modalKey: "offer-generic",
-    price: "4 400 zł",
-  },
-];
+function normalizeImage(image) {
+  if (image == null) return { primary: "", fallback: "" };
+  if (typeof image === "string") {
+    const u = resolveMediaRef(image);
+    return { primary: u, fallback: u };
+  }
+  const primary = image.primary ?? image.url ?? image.src ?? "";
+  const fallback = image.fallback ?? primary;
+  return {
+    primary: resolveMediaRef(primary),
+    fallback: resolveMediaRef(fallback),
+  };
+}
+
+function normalizeTraining(t) {
+  const { image, ...rest } = t;
+  return {
+    ...rest,
+    images: normalizeImage(image),
+  };
+}
+
+export const offerFilterTypes = offerData.filterTypes;
+export const offerTrainings = offerData.trainings.map(normalizeTraining);
+
+export function getTrainingDetail(id) {
+  return offerTrainings.find((t) => t.id === id)?.detail ?? null;
+}

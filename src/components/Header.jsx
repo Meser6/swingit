@@ -1,57 +1,19 @@
-import { useEffect, useState } from "react";
 import { BrandMark } from "./BrandMark";
-
-const TABS = [
-  { id: "start", label: "Start" },
-  { id: "o-mnie", label: "O mnie" },
-  { id: "oferta", label: "Oferta" },
-  { id: "faq", label: "FAQ" },
-  { id: "kontakt", label: "Kontakt" },
-];
-
-const MOBILE_NAV_MQ = "(max-width: 850px)";
-/** Poniżej tej pozycji zakładki zawsze widoczne. */
-const SCROLL_EXPAND_BELOW = 40;
-/** Powyżej — zwinięte (środek „martwej strefy” zapobiega migotaniu na granicy). */
-const SCROLL_COLLAPSE_ABOVE = 72;
+import { CONTENT } from "../lib/t.js";
+import { useContentStrings } from "../context/ContentStringsContext.jsx";
 
 export function Header({ activeTab, onTab, onOpenContact, onBrandClick }) {
-  const [tabsCollapsed, setTabsCollapsed] = useState(false);
-
-  useEffect(() => {
-    const mq = window.matchMedia(MOBILE_NAV_MQ);
-
-    const update = () => {
-      if (!mq.matches) {
-        setTabsCollapsed(false);
-        return;
-      }
-      const y = window.scrollY;
-      setTabsCollapsed((collapsed) => {
-        if (y <= SCROLL_EXPAND_BELOW) return false;
-        if (y >= SCROLL_COLLAPSE_ABOVE) return true;
-        return collapsed;
-      });
-    };
-
-    update();
-    window.addEventListener("scroll", update, { passive: true });
-    mq.addEventListener("change", update);
-
-    return () => {
-      window.removeEventListener("scroll", update);
-      mq.removeEventListener("change", update);
-    };
-  }, []);
+  const { t, tx } = useContentStrings();
+  const tabs = CONTENT.pages.navigation.tabs;
 
   return (
-    <header className={`site-header${tabsCollapsed ? " site-header--tabs-collapsed" : ""}`}>
+    <header className="site-header">
       <div className="container header-inner">
         <div className="header-top-bar">
           <a
             className="brand"
             href="#top"
-            aria-label="Compas — strona główna"
+            aria-label={t("ui.header.brandAriaLabel")}
             onClick={(e) => {
               e.preventDefault();
               onBrandClick?.();
@@ -59,28 +21,28 @@ export function Header({ activeTab, onTab, onOpenContact, onBrandClick }) {
           >
             <BrandMark />
             <span className="logo">
-              Compas
-              <small>dr Syrek</small>
+              {t("ui.header.logoTitle")}
+              <small>{t("ui.header.logoSubtitle")}</small>
             </span>
           </a>
           <button type="button" className="header-cta" onClick={onOpenContact}>
-            Napisz do mnie
+            {t("ui.header.cta")}
           </button>
         </div>
         <div className="header-nav-region">
-          <nav className="nav-tabs" role="tablist" aria-label="Sekcje strony">
-            {TABS.map((t) => (
+          <nav className="nav-tabs" role="tablist" aria-label={t("ui.header.navAriaLabel")}>
+            {tabs.map((tab, i) => (
               <button
-                key={t.id}
+                key={tab.id}
                 type="button"
                 role="tab"
-                id={`tab-${t.id}`}
-                aria-selected={activeTab === t.id}
-                aria-controls={`panel-${t.id}`}
-                data-tab={t.id}
-                onClick={() => onTab(t.id)}
+                id={`tab-${tab.id}`}
+                aria-selected={activeTab === tab.id}
+                aria-controls={`panel-${tab.id}`}
+                data-tab={tab.id}
+                onClick={() => onTab(tab.id)}
               >
-                {t.label}
+                {tx(`pages.navigation.tabs[${i}].label`, tab.label)}
               </button>
             ))}
           </nav>
