@@ -9,6 +9,16 @@ npm install
 npm run dev
 ```
 
+Otwórz **http://localhost:5173/swingit/** (Vite ma `base: /swingit/` pod GitHub Pages).
+
+## GitHub Pages
+
+Po pushu na `main` workflow buduje i publikuje stronę:
+
+**https://meser6.github.io/swingit/**
+
+W repozytorium: **Settings → Pages → Build and deployment → Source: GitHub Actions** (jeśli jeszcze nie włączone).
+
 ## Galeria zdjęć
 
 Eksport z Google Drive do:

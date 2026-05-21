@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useContentStrings } from "../context/ContentStringsContext.jsx";
+import { publicPath } from "../lib/publicPath.js";
 
 export function SmartImage({
   imageKey,
@@ -16,11 +17,13 @@ export function SmartImage({
   ...rest
 }) {
   const { showKeys } = useContentStrings();
-  const [src, setSrc] = useState(primary);
+  const resolvedPrimary = publicPath(primary);
+  const resolvedFallback = publicPath(fallback);
+  const [src, setSrc] = useState(resolvedPrimary);
 
   useEffect(() => {
-    setSrc(primary);
-  }, [primary]);
+    setSrc(resolvedPrimary);
+  }, [resolvedPrimary]);
 
   if (showKeys) {
     const p = primary ?? "";
@@ -103,7 +106,7 @@ export function SmartImage({
       style={style}
       draggable={draggable}
       onError={() => {
-        if (fallback) setSrc(fallback);
+        if (resolvedFallback) setSrc(resolvedFallback);
       }}
       {...rest}
     />

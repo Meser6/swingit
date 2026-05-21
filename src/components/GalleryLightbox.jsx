@@ -1,10 +1,11 @@
 import { createPortal } from "react-dom";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { publicPath } from "../lib/publicPath.js";
 
 export function GalleryLightbox({ shot, altText, onClose, dialogAria, closeLabel }) {
   const closeBtnRef = useRef(null);
   const lastFocusRef = useRef(null);
-  const [src, setSrc] = useState(shot.primary ?? "");
+  const [src, setSrc] = useState(() => publicPath(shot.primary ?? ""));
   const [portalEl, setPortalEl] = useState(null);
 
   useLayoutEffect(() => {
@@ -12,7 +13,7 @@ export function GalleryLightbox({ shot, altText, onClose, dialogAria, closeLabel
   }, []);
 
   useEffect(() => {
-    setSrc(shot.primary ?? "");
+    setSrc(publicPath(shot.primary ?? ""));
   }, [shot]);
 
   useEffect(() => {
@@ -36,7 +37,7 @@ export function GalleryLightbox({ shot, altText, onClose, dialogAria, closeLabel
     return () => document.removeEventListener("keydown", onKey);
   }, [onClose]);
 
-  const fb = shot.fallback ?? shot.primary ?? "";
+  const fb = publicPath(shot.fallback ?? shot.primary ?? "");
   if (!portalEl) return null;
 
   return createPortal(

@@ -2,14 +2,15 @@ import { Reveal } from "../hooks/Reveal";
 import { SmartImage } from "./SmartImage";
 import { CONTENT } from "../lib/t.js";
 import { useContentStrings } from "../context/ContentStringsContext.jsx";
+import { publicPath } from "../lib/publicPath.js";
 
 /** Jak w ofercie: `https://…`, `/…` z `public/`, albo względna ścieżka → `public/images/…`. */
 function resolveLogoRef(ref) {
   if (ref == null || ref === "") return "";
   const s = String(ref).trim();
   if (/^https?:\/\//i.test(s)) return s;
-  if (s.startsWith("/")) return s;
-  return `/images/${s.replace(/^\/+/, "")}`;
+  if (s.startsWith("/")) return publicPath(s);
+  return publicPath(`images/${s.replace(/^\/+/, "")}`);
 }
 
 function TrustedLogo({ item, index }) {
