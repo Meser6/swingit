@@ -1,0 +1,41 @@
+{
+  "intro": "Co znajdziecie w mojej ofercie?",
+  "sections": [
+    {
+      "id": "prowadzenie",
+      "title": "Nowoczesne prowadzenie i indywidualne podejście",
+      "body": "Wasze przyjęcie, to Wasze zasady. Przebieg przyjęcia czy repertuar muzyczny to kwestie do uzgodnienia. Zawsze chętnie podpowiem czy sugeruję swoje pomysły. Prowadzę nowoczesne zabawy i animacje taneczne dla wszystkich pokoleń. Zachęcam gości do zabawy i informuję ich o najważniejszych momentach (np. posiłkach czy atrakcjach).",
+      "image": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=1200&q=80"
+    },
+    {
+      "id": "doswiadczenie",
+      "title": "Doświadczenie i energię",
+      "body": "Moi zadowoleni klienci, ich opinie oraz uśmiechy w materiałach mówią same za siebie. Realizowanie Waszych przyjęć to nie tylko praca — to moja pasja. W każdą uroczystość wkładam serce, bo wiem, jak wiele dla Was znaczy.",
+      "image": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=1200&q=80"
+    },
+    {
+      "id": "profesjonalizm",
+      "title": "Profesjonalizm i przejrzystość",
+      "body": "Podpisuję umowę gwarantując termin, korzystam z legalnych utworów, pomogę z ZAIKS-em, wystawiam fakturę czy paragon — zapewniam pełną przejrzystość i spokój w aspektach formalnych.",
+      "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1200&q=80"
+    },
+    {
+      "id": "scenariusz",
+      "title": "Plan Waszego wydarzenia",
+      "body": "Przed przyjęciem zbuduję z Wami szczegółowy scenariusz, który będę sukcesywnie realizował.",
+      "image": "https://images.unsplash.com/photo-1511578314322-379afb476865?w=1200&q=80"
+    },
+    {
+      "id": "sprzet",
+      "title": "Profesjonalny sprzęt",
+      "body": "Sprzęt, który gwarantuje czysty dźwięk i efektowną oprawę świetlną, tworząc wyjątkową atmosferę sali.",
+      "image": "https://images.unsplash.com/photo-1598387181032-a310ecba00d7?w=1200&q=80"
+    },
+    {
+      "id": "efekty",
+      "title": "Efekty sceniczne",
+      "body": "Ciężki dym, fontanny iskier, ledowe pałeczki czy CO₂ gun na wszystkie wyjątkowe momenty!",
+      "image": "https://images.unsplash.com/photo-1533174072545-7a4b6ecdad84?w=1200&q=80"
+    }
+  ]
+}

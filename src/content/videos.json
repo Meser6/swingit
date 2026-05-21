@@ -1,0 +1,24 @@
+{
+  "playlists": [
+    {
+      "id": "oferta",
+      "label": "Oferta",
+      "playlistId": "PLYNqqVtHB7Aw-mh9tfmLXL215BJf-RR4G"
+    },
+    {
+      "id": "wesela",
+      "label": "Wesela",
+      "playlistId": "PLYNqqVtHB7AwpJzzIi7dU8neaQcFe-3H0"
+    },
+    {
+      "id": "urodziny",
+      "label": "Urodziny",
+      "playlistId": "PLYNqqVtHB7AyFqyhLXsWSiUUr3xnYVHE-"
+    },
+    {
+      "id": "szkolne",
+      "label": "Szkolne",
+      "playlistId": "PLYNqqVtHB7AzuY2otVdywC1luD4ksKwM9"
+    }
+  ]
+}

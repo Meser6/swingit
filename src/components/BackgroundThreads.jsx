@@ -1,8 +1,8 @@
-/** Dekoracyjne białe „nitki” — SVG przewija się razem ze stroną (warstwa absolute w #top). */
+/** Dekoracyjne nitki — złoto i czerń na jasnym tle. */
 export function BackgroundThreads() {
-  const w = "rgba(255, 255, 255, 0.38)";
-  const wMid = "rgba(255, 255, 255, 0.22)";
-  const wSoft = "rgba(255, 255, 255, 0.12)";
+  const w = "rgba(201, 162, 39, 0.22)";
+  const wMid = "rgba(10, 10, 10, 0.08)";
+  const wSoft = "rgba(201, 162, 39, 0.1)";
 
   return (
     <div className="bg-threads" aria-hidden="true">

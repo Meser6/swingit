@@ -1,7 +1,6 @@
 import { createPortal } from "react-dom";
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { SmartImage } from "./SmartImage";
-import { CONTENT } from "../lib/t.js";
 import { useContentStrings } from "../context/ContentStringsContext.jsx";
 
 const PER_SLIDE = 3;
@@ -22,9 +21,7 @@ function GalleryLightbox({ shot, altText, onClose, dialogAria, closeLabel }) {
   const [portalEl, setPortalEl] = useState(null);
 
   useLayoutEffect(() => {
-    setPortalEl(
-      document.getElementById(GALLERY_LIGHTBOX_MOUNT_ID) ?? document.body,
-    );
+    setPortalEl(document.getElementById(GALLERY_LIGHTBOX_MOUNT_ID) ?? document.body);
   }, []);
 
   useEffect(() => {
@@ -53,17 +50,11 @@ function GalleryLightbox({ shot, altText, onClose, dialogAria, closeLabel }) {
   }, [onClose]);
 
   const fb = shot.fallback ?? shot.primary ?? "";
-
   if (!portalEl) return null;
 
   return createPortal(
     <div className="gallery-lightbox-root" role="presentation">
-      <button
-        type="button"
-        className="gallery-lightbox__backdrop"
-        aria-label={closeLabel}
-        onClick={onClose}
-      />
+      <button type="button" className="gallery-lightbox__backdrop" aria-label={closeLabel} onClick={onClose} />
       <div
         className="gallery-lightbox"
         role="dialog"
@@ -97,20 +88,25 @@ function GalleryLightbox({ shot, altText, onClose, dialogAria, closeLabel }) {
   );
 }
 
-export function AboutGalleryCarousel() {
+/**
+ * @param {{ items: Array<{ primary: string, fallback?: string, alt: string }>, altKeyPrefix?: string, uiCopy: object }} props
+ */
+export function ImageGalleryCarousel({ items, altKeyPrefix = "gallery.items", uiCopy }) {
   const { t, tx } = useContentStrings();
-  const aboutGallery = CONTENT.about.gallery;
-  const ac = CONTENT.ui.aboutCarousel;
-  const slides = useMemo(() => chunkItems(aboutGallery, PER_SLIDE), [aboutGallery]);
+  const slides = useMemo(() => chunkItems(items, PER_SLIDE), [items]);
   const pageCount = slides.length;
   const [page, setPage] = useState(0);
   const pageRef = useRef(0);
-
   const [lightboxIndex, setLightboxIndex] = useState(null);
 
   useEffect(() => {
     pageRef.current = page;
   }, [page]);
+
+  useEffect(() => {
+    setPage(0);
+    setLightboxIndex(null);
+  }, [items]);
 
   const [autoplayEpoch, setAutoplayEpoch] = useState(0);
   const restartAutoplay = useCallback(() => setAutoplayEpoch((n) => n + 1), []);
@@ -123,11 +119,7 @@ export function AboutGalleryCarousel() {
     if (pageCount <= 1) return;
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (mq.matches) return;
-
-    const id = window.setInterval(() => {
-      setPage((p) => (p + 1) % pageCount);
-    }, AUTOPLAY_MS);
-
+    const id = window.setInterval(() => setPage((p) => (p + 1) % pageCount), AUTOPLAY_MS);
     return () => window.clearInterval(id);
   }, [pageCount, autoplayEpoch]);
 
@@ -146,23 +138,18 @@ export function AboutGalleryCarousel() {
   const onPointerUp = useCallback(
     (e) => {
       if (activePointerId.current !== e.pointerId) return;
-
       if (pageCount <= 1) {
         activePointerId.current = null;
         return;
       }
-
       const dx = e.clientX - startX.current;
       const dy = e.clientY - startY.current;
       activePointerId.current = null;
-
       if (Math.abs(dx) < SWIPE_MIN_PX || Math.abs(dx) < Math.abs(dy)) return;
-
       const p = pageRef.current;
       let next = p;
       if (dx < 0 && p < pageCount - 1) next = p + 1;
       else if (dx > 0 && p > 0) next = p - 1;
-
       if (next !== p) {
         setPage(next);
         restartAutoplay();
@@ -175,20 +162,23 @@ export function AboutGalleryCarousel() {
     if (activePointerId.current === e.pointerId) activePointerId.current = null;
   }, []);
 
-  const lightboxShot =
-    lightboxIndex != null && aboutGallery[lightboxIndex] ? aboutGallery[lightboxIndex] : null;
+  const lightboxShot = lightboxIndex != null && items[lightboxIndex] ? items[lightboxIndex] : null;
   const lightboxAlt =
-    lightboxShot != null ? tx(`about.gallery[${lightboxIndex}].alt`, lightboxShot.alt) : "";
+    lightboxShot != null ? tx(`${altKeyPrefix}[${lightboxIndex}].alt`, lightboxShot.alt) : "";
+
+  if (items.length === 0) {
+    return <p className="gallery-empty">Brak zdjęć w tej kategorii.</p>;
+  }
 
   return (
-    <div className="about-carousel" role="region" aria-label={tx("ui.aboutCarousel.regionAria", ac.regionAria)}>
+    <div className="about-carousel" role="region" aria-label={tx("ui.gallery.regionAria", uiCopy.regionAria)}>
       {lightboxShot != null ? (
         <GalleryLightbox
           shot={lightboxShot}
           altText={lightboxAlt}
           onClose={() => setLightboxIndex(null)}
-          dialogAria={t("ui.aboutCarousel.lightboxDialogAria", ac.lightboxDialogAria)}
-          closeLabel={t("ui.aboutCarousel.lightboxCloseAria", ac.lightboxCloseAria)}
+          dialogAria={t("ui.gallery.lightboxDialogAria", uiCopy.lightboxDialogAria)}
+          closeLabel={t("ui.gallery.lightboxCloseAria", uiCopy.lightboxCloseAria)}
         />
       ) : null}
 
@@ -198,30 +188,29 @@ export function AboutGalleryCarousel() {
         onPointerUp={onPointerUp}
         onPointerCancel={onPointerCancel}
       >
-        <div
-          className="about-carousel__track"
-          style={{ transform: `translate3d(-${page * 100}%, 0, 0)` }}
-        >
+        <div className="about-carousel__track" style={{ transform: `translate3d(-${page * 100}%, 0, 0)` }}>
           {slides.map((group, slideIdx) => (
             <div
               key={slideIdx}
-              id={`about-slide-${slideIdx}`}
+              id={`gallery-slide-${slideIdx}`}
               className="about-carousel__slide"
               aria-hidden={page !== slideIdx}
               role="group"
-              aria-roledescription={tx("ui.aboutCarousel.slideRole", ac.slideRole)}
-              aria-label={t("ui.aboutCarousel.slideLabel", { n: String(slideIdx + 1), total: String(pageCount) })}
+              aria-roledescription={tx("ui.gallery.slideRole", uiCopy.slideRole)}
+              aria-label={t("ui.gallery.slideLabel", { n: String(slideIdx + 1), total: String(pageCount) })}
             >
               {group.map((shot, i) => {
                 const gIdx = slideIdx * PER_SLIDE + i;
-                const alt = tx(`about.gallery[${gIdx}].alt`, shot.alt);
+                const alt = tx(`${altKeyPrefix}[${gIdx}].alt`, shot.alt);
                 return (
                   <button
                     key={`${shot.alt}-${slideIdx}-${i}`}
                     type="button"
                     className="about-gallery__thumb-btn"
-                    aria-label={t("ui.aboutCarousel.openLightboxAria", { alt })}
-                    onClick={() => {
+                    aria-label={t("ui.gallery.openLightboxAria", { alt })}
+                    onPointerDown={(e) => e.stopPropagation()}
+                    onClick={(e) => {
+                      e.stopPropagation();
                       setLightboxIndex(gIdx);
                       restartAutoplay();
                     }}
@@ -245,14 +234,14 @@ export function AboutGalleryCarousel() {
       </div>
 
       {pageCount > 1 ? (
-        <nav className="about-carousel__dots" aria-label={tx("ui.aboutCarousel.dotsAria", ac.dotsAria)}>
+        <nav className="about-carousel__dots" aria-label={tx("ui.gallery.dotsAria", uiCopy.dotsAria)}>
           {slides.map((_, i) => (
             <button
               key={i}
               type="button"
               className={`about-carousel__dot ${page === i ? "is-active" : ""}`}
               aria-current={page === i ? "true" : undefined}
-              aria-label={t("ui.aboutCarousel.dotLabel", { n: String(i + 1), total: String(pageCount) })}
+              aria-label={t("ui.gallery.dotLabel", { n: String(i + 1), total: String(pageCount) })}
               onClick={() => {
                 setPage(i);
                 restartAutoplay();

@@ -20,4 +20,3 @@ public/images/gallery/firmowe/
 ```
 
 Następnie uzupełnij ścieżki w `src/content/gallery.json`.
-# swingit

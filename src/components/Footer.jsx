@@ -1,8 +1,6 @@
-import { INSTAGRAM_URL, LINKEDIN_URL } from "../constants/social.js";
 import { CONTENT, resolveT } from "../lib/t.js";
-import { InstagramIcon } from "./InstagramIcon";
-import { LinkedInIcon } from "./LinkedInIcon";
 import { useContentStrings } from "../context/ContentStringsContext.jsx";
+import { SocialLinks } from "./SocialLinks.jsx";
 
 export function Footer() {
   const { t, tx, showKeys, setShowKeys } = useContentStrings();
@@ -26,26 +24,7 @@ export function Footer() {
         <div className="footer-row">
           <span>{t("ui.footer.copyright")}</span>
           <div className="footer-end">
-            <div className="social">
-              <a
-                href={INSTAGRAM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="insta-pill"
-                aria-label={t("ui.footer.instagramAria")}
-              >
-                <InstagramIcon width={20} height={20} /> {t("ui.footer.instagram")}
-              </a>
-              <a
-                href={LINKEDIN_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="linkedin-pill"
-                aria-label={t("ui.footer.linkedinAria")}
-              >
-                <LinkedInIcon width={20} height={20} /> {t("ui.footer.linkedin")}
-              </a>
-            </div>
+            <SocialLinks className="social-links social-links--footer" />
             <button
               type="button"
               className="footer-keys-toggle"

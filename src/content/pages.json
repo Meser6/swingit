@@ -1,74 +1,66 @@
 {
   "navigation": {
     "tabs": [
-      { "id": "start", "label": "Start" },
       { "id": "o-mnie", "label": "O mnie" },
       { "id": "oferta", "label": "Oferta" },
-      { "id": "faq", "label": "FAQ" },
+      { "id": "galeria", "label": "Galeria" },
       { "id": "kontakt", "label": "Kontakt" }
     ]
   },
   "hero": {
-    "title": "Nauczam, wykładam i szkolę — z godnością i energią",
+    "title": "DJ, konferansjer i wodzirej — Twoje przyjęcie z klasą",
     "leadBefore": "Jestem ",
-    "leadHighlight": "dr Syrek",
-    "leadAfter": ". Tworzę przestrzeń, w której wiedza spotyka się z praktyką: od wykładów i warsztatów po tutoring. Jak na kompasie — ważny jest kierunek, który wspólnie ustalamy.",
-    "tagsAria": "Role",
-    "tags": ["edukator", "pedagog", "wykładowca", "szkoleniowiec", "tutor"],
-    "visualAlt": "Wizual — rozwój i edukacja",
-    "badgeBefore": "♥️ Z przyjemnością dzielę się ofertą — na żywo i online. Śledź też mój profil ",
-    "badgeStrong": "@compas.dr.syrek",
+    "leadHighlight": "Bartłomiej Nawrot",
+    "leadAfter": " ze SWING IT. Od 2019 roku prowadzę wesela, urodziny i eventy firmowe — z energią, kulturą osobistą i muzyką dopasowaną do Was.",
+    "tagsAria": "Specjalizacje",
+    "tags": ["DJ", "konferansjer", "wodzirej"],
+    "visualAlt": "Bartłomiej Nawrot — DJ i konferansjer",
+    "badgeBefore": "Zobacz realizacje i opinie — śledź ",
+    "badgeStrong": "@djbartlomiejnawrot",
     "badgeAfter": " na Instagramie."
   },
   "start": {
-    "title": "Dlaczego Compas?",
-    "sub": "Nazwa nie jest przypadkiem: tak jak kompas wskazuje stronę świata, tak ja pomagam ustalić kierunek nauki, rozwoju zespołu albo Twojej indywidualnej ścieżki — bez chaosu i bez „jednego rozmiaru dla wszystkich”.",
-    "altFeatures": "Materiały i proces pracy",
-    "altWorkshop": "Warsztat i praca z grupą",
+    "title": "Dlaczego SWING IT?",
+    "sub": "Profesjonalne prowadzenie imprez, przejrzyste ustalenia i sprzęt, który robi różnicę — żebyście mogli po prostu cieszyć się swoim dniem.",
+    "ctaOffer": "Zobacz ofertę",
     "listA": [
-      "Spójna narracja: od celów biznesowych po cele osobiste ucznia",
-      "Materiały po spotkaniu: skróty, szablony, ćwiczenia do domu",
-      "Format dopasowany: stacjonarnie, online albo hybryda",
-      "Jasne cele i kontrakt spotkania — wiadomo, co jest po drodze, a co na koniec",
-      "Tempo dopasowane do grupy — bez wyścigu ze slajdami „na siłę”",
-      "Mniej żargonu, więcej sensu: język dopasowany do audytorii"
+      "Indywidualne podejście — przebieg i repertuar ustalamy wspólnie",
+      "Nowoczesne zabawy i animacje taneczne dla wszystkich pokoleń",
+      "Profesjonalny sprzęt — czysty dźwięk i efektowna oprawa świetlna",
+      "Efekty sceniczne na wyjątkowe momenty: dym, iskry, CO₂ i więcej"
     ],
     "listB": [
-      "Kultura feedbacku: krótka ankieta lub rozmowa po szkoleniu",
-      "Wspólnie ustalamy kierunek: najpierw intencja i cele, potem treść — bez przypadkowego „zbioru tematów”",
-      "Przestrzeń na pytania i pomyłki — bez presji „idealnego” udziału od pierwszej minuty",
-      "Praca w parach i małych zespołach tam, gdzie to pomaga, nie dla samego ruchu",
-      "Podsumowanie z planem na kolejne dni — żeby zostało coś po spotkaniu, nie tylko wrażenie",
-      "Kontakt po szkoleniu uzgodniony z góry — bez natarczywego follow-upu"
-    ]
+      "Umowa, legalne utwory i pomoc z ZAIKS-em — spokój w formalnościach",
+      "Szczegółowy scenariusz przed przyjęciem — realizowany krok po kroku",
+      "Konferansjer i wodzirej w jednej osobie — goście zawsze wiedzą, co się dzieje",
+      "Opinie zadowolonych par i klientów — zobacz poniżej"
+    ],
+    "opinionsTitle": "Opinie",
+    "opinionsSub": "Opinie par i organizatorów z portalu Wesele z klasą.",
+    "wzkLinkLabel": "Profil SWING IT na Wesele z klasą"
   },
   "about": {
-    "portraitAlt": "dr Syrek — zdjęcie",
-    "lead": "Edukacja to dla mnie relacja — nie tylko transfer informacji. Łączę środowisko akademickie z praktyką pracy z grupą: wykłady, warsztaty i konsultacje. Zależy mi, żeby uczestnik wychodził z mapą — wiedział, co ćwiczyć dalej i po co.",
-    "p2": "W skrócie: zamiast „przerzucać slajdy na siłę”, wolę porozumieć się z salą: kto tu jest, czego potrzebujecie dziś, gdzie możecie to zastosować jutro. Dlatego przed dłuższą współpracą ustalamy intencję i ramy — żeby treść miała sens w Waszym kontekście, a nie tylko w moim planie warsztatu.",
-    "p3": "Pracuję też z osobami indywidualnie: od przygotowania do egzaminu czy prezentacji po uporządkowanie nauki i feedback po próbach. Jeśli szukasz konkretu bez nachalnej sprzedaży — zacznijmy od krótkiej rozmowy (np. na Instagramie): opisz cel, termin i formę, a ja odpiszę, czy i jak mogę pomóc.",
-    "educationTitle": "Wykształcenie i szkolenia",
-    "experienceTitle": "Doświadczenie"
+    "portraitAlt": "Bartłomiej Nawrot — zdjęcie",
+    "lead": "Nazywam się Bartłomiej Nawrot i od 2019 roku prowadzę szeroką gamę eventów. Łączę pasję do muzyki z pracą DJ-a, konferansjera i wodzireja — z klasą i wysoką kulturą osobistą.",
+    "p2": "Podczas wydarzeń dbam nie tylko o oprawę muzyczną, ale też o atmosferę: informuję gości o ważnych momentach — pierwszy taniec, posiłki, atrakcje specjalne.",
+    "p3": "Indywidualne podejście i podążanie za trendami w branży to dla mnie standard. Chętnie podpowiem i zasugeruję pomysły, ale to Wasze przyjęcie i Wasze zasady."
   },
   "offer": {
     "title": "Oferta",
-    "sub": "Wybierz typ szkolenia — lista pokaże dopasowane pozycje. Na jednej stronie widzisz do dziewięciu pozycji (trzy w rzędzie); szczegóły i ramy czasowe otwierasz w modalu."
+    "sub": "Co znajdziecie w mojej ofercie? Poniżej najważniejsze elementy współpracy — szczegóły ustalamy indywidualnie."
   },
-  "faq": {
-    "title": "FAQ",
-    "sub": "Krótkie odpowiedzi na typowe pytania przed współpracą. Jeśli czegoś tu nie ma — napisz na Instagramie, LinkedIn albo mailowo (szczegóły w zakładce Kontakt)."
+  "gallery": {
+    "title": "Galeria",
+    "sub": "Zdjęcia z realizacji — wesela, urodziny i eventy. Pełny zbiór możesz też przeglądać po kategoriach."
   },
   "contact": {
     "title": "Kontakt",
-    "sub": "Najszybciej na Instagramie — wyślij DM. Jestem też na LinkedIn; e‑mail z krótkim kontekstem też OK.",
-    "instagramLabel": "Instagram (preferowane):",
-    "linkedinLabel": "LinkedIn:",
+    "sub": "Telefon, e-mail i profile w mediach społecznościowych — wybierz wygodną formę kontaktu.",
+    "socialHeading": "Media społecznościowe",
     "phoneLabel": "Telefon:",
     "emailLabel": "E-mail:",
-    "hint": "W wiadomości napisz: temat, liczba osób (jeśli firma), termin i forma (online / na miejscu).",
-    "openModalCta": "Co napisać w wiadomości",
-    "visualAlt": "Kontakt",
-    "instagramDisplayPath": "instagram.com/compas.dr.syrek",
-    "linkedinDisplayPath": "linkedin.com/in/daniel-syrek-175009289"
+    "inquiryTitle": "Zapytanie o ofertę",
+    "inquiryText": "Jeżeli jesteś zainteresowany ofertą, napisz do mnie wiadomość na adres mailowy. W treści podaj datę i rodzaj wydarzenia, przybliżoną liczbę gości, lokalizację oraz to, na czym Ci zależy najbardziej.",
+    "visualAlt": "Kontakt — SWING IT"
   }
 }
