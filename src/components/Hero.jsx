@@ -1,13 +1,11 @@
 import { INSTAGRAM_URL } from "../constants/social.js";
-import { IMG, imgPair } from "../constants/images";
-import { Reveal } from "../hooks/Reveal";
-import { SmartImage } from "./SmartImage";
-import { CONTENT } from "../lib/t.js";
-import { useContentStrings } from "../context/ContentStringsContext.jsx";
+import { IMG } from "../constants/images.js";
+import { Reveal } from "../hooks/Reveal.jsx";
+import { SmartImage } from "./SmartImage.jsx";
+import pages from "../content/pages.json";
 
 export function Hero() {
-  const { tx } = useContentStrings();
-  const p = CONTENT.pages.hero;
+  const p = pages.hero;
 
   return (
     <section className="hero container" id="hero">
@@ -15,37 +13,31 @@ export function Hero() {
         <div className="hero-grid">
           <Reveal>
             <div className="hero-copy">
-              <h1>{tx("pages.hero.title", p.title)}</h1>
+              <p className="hero-eyebrow">{p.eyebrow}</p>
+              <h1>{p.title}</h1>
               <p className="hero-lead">
-                {tx("pages.hero.leadBefore", p.leadBefore)}
-                <strong>{tx("pages.hero.leadHighlight", p.leadHighlight)}</strong>
-                {tx("pages.hero.leadAfter", p.leadAfter)}
+                {p.leadBefore}
+                <strong>{p.leadHighlight}</strong>
+                {p.leadAfter}
               </p>
-              <div className="hero-copy__tags" role="group" aria-label={tx("pages.hero.tagsAria", p.tagsAria)}>
-                {p.tags.map((label, i) => (
-                  <button key={label} type="button" className="hero-role-btn">
-                    {tx(`pages.hero.tags[${i}]`, label)}
-                  </button>
+              <div className="hero-copy__tags" role="group" aria-label={p.tagsAria}>
+                {p.tags.map((label) => (
+                  <span key={label} className="hero-role-btn">
+                    {label}
+                  </span>
                 ))}
               </div>
             </div>
           </Reveal>
           <Reveal>
             <div className="hero-visual media-frame media-frame--4-3">
-              <SmartImage
-                imageKey="hero"
-                {...imgPair(IMG.hero)}
-                alt={tx("pages.hero.visualAlt", p.visualAlt)}
-                width={800}
-                height={600}
-                loading="eager"
-              />
+              <SmartImage src={IMG.hero} alt={p.visualAlt} width={800} height={600} loading="eager" />
               <div className="hero-badge">
-                {tx("pages.hero.badgeBefore", p.badgeBefore)}
+                {p.badgeBefore}
                 <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">
-                  <strong>{tx("pages.hero.badgeStrong", p.badgeStrong)}</strong>
+                  <strong>{p.badgeStrong}</strong>
                 </a>
-                {tx("pages.hero.badgeAfter", p.badgeAfter)}
+                {p.badgeAfter}
               </div>
             </div>
           </Reveal>

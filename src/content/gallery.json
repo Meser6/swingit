@@ -1,46 +1,502 @@
 {
   "categories": [
-    { "id": "all", "label": "Wszystkie" },
-    { "id": "wesela", "label": "Wesela" },
-    { "id": "urodziny", "label": "Urodziny" },
-    { "id": "firmowe", "label": "Firmowe i inne" }
+    {
+      "id": "all",
+      "label": "Wszystkie"
+    },
+    {
+      "id": "zabawa",
+      "label": "Zabawa"
+    },
+    {
+      "id": "efekty",
+      "label": "Efekty sceniczne"
+    },
+    {
+      "id": "prezencja",
+      "label": "Prezencja"
+    }
   ],
   "items": [
     {
-      "category": "wesela",
-      "primary": "https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80",
-      "fallback": "https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80",
-      "alt": "Para młoda na parkiecie — wesele"
+      "category": "prezencja",
+      "src": "/images/gallery/prezencja/prezencja-01.jpg",
+      "alt": "SWING IT — prezencja DJ-a i konferansjera na przyjęciu"
     },
     {
-      "category": "wesela",
-      "primary": "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1200&q=80",
-      "fallback": "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1200&q=80",
-      "alt": "Sala weselna — oprawa świetlna"
+      "category": "prezencja",
+      "src": "/images/gallery/prezencja/prezencja-02.jpg",
+      "alt": "SWING IT — prezencja DJ-a i konferansjera na przyjęciu"
     },
     {
-      "category": "urodziny",
-      "primary": "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=1200&q=80",
-      "fallback": "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=1200&q=80",
-      "alt": "Urodziny — goście na parkiecie"
+      "category": "prezencja",
+      "src": "/images/gallery/prezencja/prezencja-03.jpg",
+      "alt": "SWING IT — prezencja DJ-a i konferansjera na przyjęciu"
     },
     {
-      "category": "urodziny",
-      "primary": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1200&q=80",
-      "fallback": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1200&q=80",
-      "alt": "Impreza urodzinowa — efekty świetlne"
+      "category": "prezencja",
+      "src": "/images/gallery/prezencja/prezencja-04.jpg",
+      "alt": "SWING IT — prezencja DJ-a i konferansjera na przyjęciu"
     },
     {
-      "category": "firmowe",
-      "primary": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&q=80",
-      "fallback": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&q=80",
-      "alt": "Event firmowy — scena i oświetlenie"
+      "category": "prezencja",
+      "src": "/images/gallery/prezencja/prezencja-05.jpg",
+      "alt": "SWING IT — prezencja DJ-a i konferansjera na przyjęciu"
     },
     {
-      "category": "firmowe",
-      "primary": "https://images.unsplash.com/photo-1505236858219-8359eb2e413b?w=1200&q=80",
-      "fallback": "https://images.unsplash.com/photo-1505236858219-8359eb2e413b?w=1200&q=80",
-      "alt": "Konferansjer na evencie"
+      "category": "prezencja",
+      "src": "/images/gallery/prezencja/prezencja-06.jpg",
+      "alt": "SWING IT — prezencja DJ-a i konferansjera na przyjęciu"
+    },
+    {
+      "category": "prezencja",
+      "src": "/images/gallery/prezencja/prezencja-07.jpg",
+      "alt": "SWING IT — prezencja DJ-a i konferansjera na przyjęciu"
+    },
+    {
+      "category": "prezencja",
+      "src": "/images/gallery/prezencja/prezencja-08.jpg",
+      "alt": "SWING IT — prezencja DJ-a i konferansjera na przyjęciu"
+    },
+    {
+      "category": "prezencja",
+      "src": "/images/gallery/prezencja/prezencja-09.jpg",
+      "alt": "SWING IT — prezencja DJ-a i konferansjera na przyjęciu"
+    },
+    {
+      "category": "prezencja",
+      "src": "/images/gallery/prezencja/prezencja-10.jpg",
+      "alt": "SWING IT — prezencja DJ-a i konferansjera na przyjęciu"
+    },
+    {
+      "category": "prezencja",
+      "src": "/images/gallery/prezencja/prezencja-11.jpg",
+      "alt": "SWING IT — prezencja DJ-a i konferansjera na przyjęciu"
+    },
+    {
+      "category": "prezencja",
+      "src": "/images/gallery/prezencja/prezencja-12.jpg",
+      "alt": "SWING IT — prezencja DJ-a i konferansjera na przyjęciu"
+    },
+    {
+      "category": "prezencja",
+      "src": "/images/gallery/prezencja/prezencja-13.jpg",
+      "alt": "SWING IT — prezencja DJ-a i konferansjera na przyjęciu"
+    },
+    {
+      "category": "prezencja",
+      "src": "/images/gallery/prezencja/prezencja-14.jpg",
+      "alt": "SWING IT — prezencja DJ-a i konferansjera na przyjęciu"
+    },
+    {
+      "category": "prezencja",
+      "src": "/images/gallery/prezencja/prezencja-15.jpg",
+      "alt": "SWING IT — prezencja DJ-a i konferansjera na przyjęciu"
+    },
+    {
+      "category": "prezencja",
+      "src": "/images/gallery/prezencja/prezencja-16.jpg",
+      "alt": "SWING IT — prezencja DJ-a i konferansjera na przyjęciu"
+    },
+    {
+      "category": "prezencja",
+      "src": "/images/gallery/prezencja/prezencja-17.jpg",
+      "alt": "SWING IT — prezencja DJ-a i konferansjera na przyjęciu"
+    },
+    {
+      "category": "prezencja",
+      "src": "/images/gallery/prezencja/prezencja-18.jpg",
+      "alt": "SWING IT — prezencja DJ-a i konferansjera na przyjęciu"
+    },
+    {
+      "category": "prezencja",
+      "src": "/images/gallery/prezencja/prezencja-19.jpg",
+      "alt": "SWING IT — prezencja DJ-a i konferansjera na przyjęciu"
+    },
+    {
+      "category": "prezencja",
+      "src": "/images/gallery/prezencja/prezencja-20.jpg",
+      "alt": "SWING IT — prezencja DJ-a i konferansjera na przyjęciu"
+    },
+    {
+      "category": "prezencja",
+      "src": "/images/gallery/prezencja/prezencja-21.jpg",
+      "alt": "SWING IT — prezencja DJ-a i konferansjera na przyjęciu"
+    },
+    {
+      "category": "prezencja",
+      "src": "/images/gallery/prezencja/prezencja-22.jpg",
+      "alt": "SWING IT — prezencja DJ-a i konferansjera na przyjęciu"
+    },
+    {
+      "category": "prezencja",
+      "src": "/images/gallery/prezencja/prezencja-23.jpg",
+      "alt": "SWING IT — prezencja DJ-a i konferansjera na przyjęciu"
+    },
+    {
+      "category": "prezencja",
+      "src": "/images/gallery/prezencja/prezencja-24.jpg",
+      "alt": "SWING IT — prezencja DJ-a i konferansjera na przyjęciu"
+    },
+    {
+      "category": "prezencja",
+      "src": "/images/gallery/prezencja/prezencja-25.jpg",
+      "alt": "SWING IT — prezencja DJ-a i konferansjera na przyjęciu"
+    },
+    {
+      "category": "prezencja",
+      "src": "/images/gallery/prezencja/prezencja-26.jpg",
+      "alt": "SWING IT — prezencja DJ-a i konferansjera na przyjęciu"
+    },
+    {
+      "category": "prezencja",
+      "src": "/images/gallery/prezencja/prezencja-27.jpg",
+      "alt": "SWING IT — prezencja DJ-a i konferansjera na przyjęciu"
+    },
+    {
+      "category": "prezencja",
+      "src": "/images/gallery/prezencja/prezencja-28.jpg",
+      "alt": "SWING IT — prezencja DJ-a i konferansjera na przyjęciu"
+    },
+    {
+      "category": "prezencja",
+      "src": "/images/gallery/prezencja/prezencja-29.jpg",
+      "alt": "SWING IT — prezencja DJ-a i konferansjera na przyjęciu"
+    },
+    {
+      "category": "prezencja",
+      "src": "/images/gallery/prezencja/prezencja-30.jpg",
+      "alt": "SWING IT — prezencja DJ-a i konferansjera na przyjęciu"
+    },
+    {
+      "category": "prezencja",
+      "src": "/images/gallery/prezencja/prezencja-31.jpg",
+      "alt": "SWING IT — prezencja DJ-a i konferansjera na przyjęciu"
+    },
+    {
+      "category": "prezencja",
+      "src": "/images/gallery/prezencja/prezencja-32.jpg",
+      "alt": "SWING IT — prezencja DJ-a i konferansjera na przyjęciu"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-01.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-02.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-03.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-04.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-05.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-06.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-07.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-08.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-09.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-10.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-11.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-12.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-13.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-14.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-15.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-16.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-17.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-18.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-19.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-20.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-21.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-22.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-23.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-24.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-25.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-26.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-27.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-28.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-29.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-30.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-31.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-32.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-33.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-34.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-35.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-36.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-37.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-38.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-39.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-40.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-41.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-42.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-43.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-44.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-45.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-46.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-47.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-48.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-49.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-50.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-51.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-52.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-53.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "zabawa",
+      "src": "/images/gallery/zabawa/zabawa-54.jpg",
+      "alt": "SWING IT — zabawa i integracja gości na parkiecie"
+    },
+    {
+      "category": "efekty",
+      "src": "/images/gallery/efekty/efekty-01.jpg",
+      "alt": "SWING IT — efekty sceniczne — dym, iskry i światła"
+    },
+    {
+      "category": "efekty",
+      "src": "/images/gallery/efekty/efekty-02.jpg",
+      "alt": "SWING IT — efekty sceniczne — dym, iskry i światła"
+    },
+    {
+      "category": "efekty",
+      "src": "/images/gallery/efekty/efekty-03.jpg",
+      "alt": "SWING IT — efekty sceniczne — dym, iskry i światła"
+    },
+    {
+      "category": "efekty",
+      "src": "/images/gallery/efekty/efekty-04.jpg",
+      "alt": "SWING IT — efekty sceniczne — dym, iskry i światła"
+    },
+    {
+      "category": "efekty",
+      "src": "/images/gallery/efekty/efekty-05.jpg",
+      "alt": "SWING IT — efekty sceniczne — dym, iskry i światła"
+    },
+    {
+      "category": "efekty",
+      "src": "/images/gallery/efekty/efekty-06.jpg",
+      "alt": "SWING IT — efekty sceniczne — dym, iskry i światła"
+    },
+    {
+      "category": "efekty",
+      "src": "/images/gallery/efekty/efekty-07.jpg",
+      "alt": "SWING IT — efekty sceniczne — dym, iskry i światła"
+    },
+    {
+      "category": "efekty",
+      "src": "/images/gallery/efekty/efekty-08.jpg",
+      "alt": "SWING IT — efekty sceniczne — dym, iskry i światła"
+    },
+    {
+      "category": "efekty",
+      "src": "/images/gallery/efekty/efekty-09.jpg",
+      "alt": "SWING IT — efekty sceniczne — dym, iskry i światła"
+    },
+    {
+      "category": "efekty",
+      "src": "/images/gallery/efekty/efekty-10.jpg",
+      "alt": "SWING IT — efekty sceniczne — dym, iskry i światła"
     }
   ]
 }

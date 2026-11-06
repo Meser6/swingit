@@ -1,10 +1,9 @@
-import { BrandMark } from "./BrandMark";
-import { CONTENT } from "../lib/t.js";
-import { useContentStrings } from "../context/ContentStringsContext.jsx";
+import { BrandMark } from "./BrandMark.jsx";
+import ui from "../content/ui.json";
+import pages from "../content/pages.json";
 
-export function Header({ activeTab, onTab, onOpenContact, onBrandClick }) {
-  const { t, tx } = useContentStrings();
-  const tabs = CONTENT.pages.navigation.tabs;
+export function Header({ activeTab, onTab, onBrandClick }) {
+  const tabs = pages.navigation.tabs;
 
   return (
     <header className="site-header">
@@ -13,7 +12,7 @@ export function Header({ activeTab, onTab, onOpenContact, onBrandClick }) {
           <a
             className="brand"
             href="#top"
-            aria-label={t("ui.header.brandAriaLabel")}
+            aria-label={ui.header.brandAriaLabel}
             onClick={(e) => {
               e.preventDefault();
               onBrandClick?.();
@@ -21,17 +20,17 @@ export function Header({ activeTab, onTab, onOpenContact, onBrandClick }) {
           >
             <BrandMark />
             <span className="logo">
-              {t("ui.header.logoTitle")}
-              <small>{t("ui.header.logoSubtitle")}</small>
+              {ui.header.logoTitle}
+              <small>{ui.header.logoSubtitle}</small>
             </span>
           </a>
-          <button type="button" className="header-cta" onClick={onOpenContact}>
-            {t("ui.header.cta")}
+          <button type="button" className="header-cta" onClick={() => onTab("kontakt")}>
+            {ui.header.cta}
           </button>
         </div>
         <div className="header-nav-region">
-          <nav className="nav-tabs" role="tablist" aria-label={t("ui.header.navAriaLabel")}>
-            {tabs.map((tab, i) => (
+          <nav className="nav-tabs" role="tablist" aria-label={ui.header.navAriaLabel}>
+            {tabs.map((tab) => (
               <button
                 key={tab.id}
                 type="button"
@@ -42,7 +41,7 @@ export function Header({ activeTab, onTab, onOpenContact, onBrandClick }) {
                 data-tab={tab.id}
                 onClick={() => onTab(tab.id)}
               >
-                {tx(`pages.navigation.tabs[${i}].label`, tab.label)}
+                {tab.label}
               </button>
             ))}
           </nav>

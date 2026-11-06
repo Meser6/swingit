@@ -1,23 +1,19 @@
 import { useMemo, useState } from "react";
-import { CONTENT } from "../lib/t.js";
-import { useContentStrings } from "../context/ContentStringsContext.jsx";
+import gallery from "../content/gallery.json";
 import { ImageGalleryGrid } from "./ImageGalleryGrid.jsx";
 
 export function GalleryPanel() {
-  const { tx } = useContentStrings();
-  const data = CONTENT.gallery;
-  const uiCopy = CONTENT.ui.gallery;
   const [filterId, setFilterId] = useState("all");
 
   const filteredItems = useMemo(() => {
-    if (filterId === "all") return data.items;
-    return data.items.filter((item) => item.category === filterId);
-  }, [filterId, data.items]);
+    if (filterId === "all") return gallery.items;
+    return gallery.items.filter((item) => item.category === filterId);
+  }, [filterId]);
 
   return (
     <div className="gallery-panel">
-      <div className="offer-filters offer-filters--buttons" role="toolbar" aria-label={tx("ui.gallery.filterToolbarAria", uiCopy.filterToolbarAria)}>
-        {data.categories.map((cat, i) => (
+      <div className="offer-filters" role="toolbar" aria-label="Filtr kategorii galerii">
+        {gallery.categories.map((cat) => (
           <button
             key={cat.id}
             type="button"
@@ -25,11 +21,11 @@ export function GalleryPanel() {
             aria-pressed={filterId === cat.id}
             onClick={() => setFilterId(cat.id)}
           >
-            {tx(`gallery.categories[${i}].label`, cat.label)}
+            {cat.label}
           </button>
         ))}
       </div>
-      <ImageGalleryGrid items={filteredItems} altKeyPrefix="gallery.items" uiCopy={uiCopy} />
+      <ImageGalleryGrid items={filteredItems} />
     </div>
   );
 }

@@ -4,63 +4,85 @@
       { "id": "o-mnie", "label": "O mnie" },
       { "id": "oferta", "label": "Oferta" },
       { "id": "galeria", "label": "Galeria" },
+      { "id": "opinie", "label": "Opinie" },
       { "id": "kontakt", "label": "Kontakt" }
     ]
   },
   "hero": {
-    "title": "DJ, konferansjer i wodzirej — Twoje przyjęcie z klasą",
+    "eyebrow": "DJ · Konferansjer · Wodzirej",
+    "title": "Nowoczesne przyjęcia z klasą",
     "leadBefore": "Jestem ",
     "leadHighlight": "Bartłomiej Nawrot",
-    "leadAfter": " ze SWING IT. Od 2019 roku prowadzę wesela, urodziny i eventy firmowe — z energią, kulturą osobistą i muzyką dopasowaną do Was.",
+    "leadAfter": " ze SWING IT. Nienaganna prezencja, zabawy ze smakiem, efekty sceniczne i najlepsza muzyka na Wasze wesele, urodziny czy event firmowy.",
     "tagsAria": "Specjalizacje",
-    "tags": ["DJ", "konferansjer", "wodzirej"],
-    "visualAlt": "Bartłomiej Nawrot — DJ i konferansjer",
+    "tags": ["DJ", "Konferansjer", "Wodzirej"],
+    "visualAlt": "Bartłomiej Nawrot — DJ i konferansjer SWING IT podczas wesela",
     "badgeBefore": "Zobacz realizacje i opinie — śledź ",
-    "badgeStrong": "@djbartlomiejnawrot",
-    "badgeAfter": " na Instagramie."
+    "badgeStrong": "SWING IT",
+    "badgeAfter": " na Instagramie lub portalu Wesele z klasą."
   },
   "start": {
-    "title": "Dlaczego SWING IT?",
-    "sub": "Profesjonalne prowadzenie imprez, przejrzyste ustalenia i sprzęt, który robi różnicę — żebyście mogli po prostu cieszyć się swoim dniem.",
+    "title": "Dlaczego warto wybrać właśnie mnie?",
+    "sub": "Wszystkie wydarzenia prowadzę na wysokim poziomie, zgodnie z planem, zapewniając odpowiedniej jakości sprzęt — tak, abyście mogli skupić się wyłącznie na zabawie.",
     "ctaOffer": "Zobacz ofertę",
     "listA": [
-      "Indywidualne podejście — przebieg i repertuar ustalamy wspólnie",
+      "Repertuar ustalony indywidualnie — odpowiedni dla Was i Waszych gości",
       "Nowoczesne zabawy i animacje taneczne dla wszystkich pokoleń",
       "Profesjonalny sprzęt — czysty dźwięk i efektowna oprawa świetlna",
-      "Efekty sceniczne na wyjątkowe momenty: dym, iskry, CO₂ i więcej"
+      "Efekty sceniczne na wyjątkowe momenty: ciężki dym, fontanny iskier i wiele więcej"
     ],
     "listB": [
-      "Umowa, legalne utwory i pomoc z ZAIKS-em — spokój w formalnościach",
-      "Szczegółowy scenariusz przed przyjęciem — realizowany krok po kroku",
-      "Konferansjer i wodzirej w jednej osobie — goście zawsze wiedzą, co się dzieje",
-      "Opinie zadowolonych par i klientów — zobacz poniżej"
+      "Szczegółowy scenariusz Twojego wydarzenia — realizowany krok po kroku",
+      "DJ, konferansjer i wodzirej w jednej osobie — goście zawsze wiedzą, co się dzieje",
+      "Opinie zadowolonych par i klientów — zobacz zakładkę Opinie",
+      "Umowa gwarantująca rezerwację terminu — na ustalonych warunkach"
     ],
-    "opinionsTitle": "Opinie",
-    "opinionsSub": "Opinie par i organizatorów z portalu Wesele z klasą.",
+    "opinionsTitle": "Zaufali mi już liczni goście i Pary Młode",
+    "opinionsSub": "Pełne opinie z portalu Wesele z klasą i Google znajdziesz w zakładce Opinie.",
+    "opinionsCta": "Zobacz opinie",
     "wzkLinkLabel": "Profil SWING IT na Wesele z klasą"
   },
   "about": {
-    "portraitAlt": "Bartłomiej Nawrot — zdjęcie",
-    "lead": "Nazywam się Bartłomiej Nawrot i od 2019 roku prowadzę szeroką gamę eventów. Łączę pasję do muzyki z pracą DJ-a, konferansjera i wodzireja — z klasą i wysoką kulturą osobistą.",
-    "p2": "Podczas wydarzeń dbam nie tylko o oprawę muzyczną, ale też o atmosferę: informuję gości o ważnych momentach — pierwszy taniec, posiłki, atrakcje specjalne.",
-    "p3": "Indywidualne podejście i podążanie za trendami w branży to dla mnie standard. Chętnie podpowiem i zasugeruję pomysły, ale to Wasze przyjęcie i Wasze zasady."
+    "eyebrow": "O mnie",
+    "portraitAlt": "Bartłomiej Nawrot — DJ i konferansjer SWING IT",
+    "lead": "Nazywam się Bartłomiej Nawrot i od 2019 roku zajmuję się prowadzeniem szerokiej gamy eventów.",
+    "p2": "Moje doświadczenie oraz umiejętności pozwalają mi zadbać o profesjonalizm, dzięki czemu tworzę z Państwem niezapomnianą atmosferę na przyjęciach. Mam to szczęście, że pasję do muzyki oraz zawodu DJ-a łączę z życiem zawodowym.",
+    "p3": "Podczas wydarzeń moja rola to nie tylko profesja DJ-ska, ale również wcielenie się w rolę Wodzireja czy Konferansjera. Indywidualne podejście z jednoczesnym podążaniem za trendami w mojej branży to dla mnie kwestia obligatoryjna.",
+    "p4": "Przyjęcia prowadzę z klasą i wysoką kulturą osobistą. Gości informuję o wszystkich ważnych wydarzeniach jak pierwszy taniec, ciepłe posiłki czy inne specjalne atrakcje. Jeżeli jest taka potrzeba, wesela prowadzę również w języku angielskim."
   },
   "offer": {
-    "title": "Oferta",
-    "sub": "Co znajdziecie w mojej ofercie? Poniżej najważniejsze elementy współpracy — szczegóły ustalamy indywidualnie."
+    "eyebrow": "Oferta",
+    "title": "Co znajdziecie w mojej ofercie?",
+    "sub": "Poniżej najważniejsze elementy współpracy — szczegóły zawsze ustalamy indywidualnie, dopasowując je do charakteru Waszego przyjęcia."
   },
   "gallery": {
-    "title": "Galeria",
-    "sub": "Zdjęcia z realizacji — wesela, urodziny i eventy. Pełny zbiór możesz też przeglądać po kategoriach."
+    "eyebrow": "Galeria",
+    "title": "Zobacz SWING IT w akcji",
+    "sub": "Zdjęcia z realizacji — prezencja, zabawa i efekty sceniczne. Pełną relację wideo znajdziesz niżej oraz na YouTube."
+  },
+  "opinions": {
+    "eyebrow": "Opinie",
+    "title": "Co mówią Pary Młode i goście",
+    "sub": "Opinie zbieramy na portalu Wesele z klasą oraz w Google — zapraszam też do obejrzenia realizacji na Instagramie i TikToku.",
+    "wzkLinkLabel": "Pełny profil i opinie na Wesele z klasą",
+    "googleLinkLabel": "Zobacz opinie w Google"
   },
   "contact": {
-    "title": "Kontakt",
-    "sub": "Telefon, e-mail i profile w mediach społecznościowych — wybierz wygodną formę kontaktu.",
+    "eyebrow": "Kontakt",
+    "title": "Porozmawiajmy o Waszym wydarzeniu",
+    "sub": "Telefon, e-mail i profile w mediach społecznościowych — wybierz wygodną dla Ciebie formę kontaktu.",
     "socialHeading": "Media społecznościowe",
-    "phoneLabel": "Telefon:",
-    "emailLabel": "E-mail:",
-    "inquiryTitle": "Zapytanie o ofertę",
-    "inquiryText": "Jeżeli jesteś zainteresowany ofertą, napisz do mnie wiadomość na adres mailowy. W treści podaj datę i rodzaj wydarzenia, przybliżoną liczbę gości, lokalizację oraz to, na czym Ci zależy najbardziej.",
-    "visualAlt": "Kontakt — SWING IT"
+    "phoneLabel": "Telefon",
+    "emailLabel": "E-mail",
+    "inquiryTitle": "Napisz do mnie",
+    "inquiryIntro": "Jeżeli jesteś zainteresowany ofertą, napisz do mnie wiadomość na adres mailowy. W treści podaj:",
+    "inquiryPoints": [
+      "datę i rodzaj wydarzenia",
+      "przybliżoną liczbę gości",
+      "lokalizację",
+      "to, na czym Ci zależy najbardziej"
+    ],
+    "inquiryOutro": "Odpiszę najszybciej jak to możliwe z propozycją dalszych kroków.",
+    "visualAlt": "SWING IT — kontakt"
   }
 }

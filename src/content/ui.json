@@ -7,22 +7,11 @@
     "logoSubtitle": "Bartłomiej Nawrot"
   },
   "footer": {
-    "copyright": "© {{year}} SWING IT · Bartłomiej Nawrot",
-    "showKeys": "Pokaż klucze",
-    "hideKeys": "Ukryj klucze",
-    "toggleKeysTitle": "Przełącz widok: treść strony albo klucze z plików JSON w src/content"
-  },
-  "modal": {
-    "closeAria": "Zamknij"
+    "copyright": "© {{year}} SWING IT · Bartłomiej Nawrot"
   },
   "gallery": {
-    "filterAll": "Wszystkie",
     "filterToolbarAria": "Filtr kategorii galerii",
     "regionAria": "Galeria zdjęć",
-    "dotsAria": "Przewijanie galerii po trzy zdjęcia",
-    "slideRole": "slajd",
-    "slideLabel": "Zdjęcia {{n}} z {{total}}",
-    "dotLabel": "Zdjęcia {{n}} z {{total}} (po trzy na ekranie)",
     "openLightboxAria": "Otwórz zdjęcie na pełnym ekranie: {{alt}}",
     "lightboxDialogAria": "Powiększone zdjęcie",
     "lightboxCloseAria": "Zamknij powiększone zdjęcie"

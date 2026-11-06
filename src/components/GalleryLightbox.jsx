@@ -5,16 +5,11 @@ import { publicPath } from "../lib/publicPath.js";
 export function GalleryLightbox({ shot, altText, onClose, dialogAria, closeLabel }) {
   const closeBtnRef = useRef(null);
   const lastFocusRef = useRef(null);
-  const [src, setSrc] = useState(() => publicPath(shot.primary ?? ""));
   const [portalEl, setPortalEl] = useState(null);
 
   useLayoutEffect(() => {
     setPortalEl(document.getElementById("gallery-lightbox-mount") ?? document.body);
   }, []);
-
-  useEffect(() => {
-    setSrc(publicPath(shot.primary ?? ""));
-  }, [shot]);
 
   useEffect(() => {
     lastFocusRef.current = document.activeElement;
@@ -37,7 +32,6 @@ export function GalleryLightbox({ shot, altText, onClose, dialogAria, closeLabel
     return () => document.removeEventListener("keydown", onKey);
   }, [onClose]);
 
-  const fb = publicPath(shot.fallback ?? shot.primary ?? "");
   if (!portalEl) return null;
 
   return createPortal(
@@ -60,15 +54,7 @@ export function GalleryLightbox({ shot, altText, onClose, dialogAria, closeLabel
           >
             ×
           </button>
-          <img
-            className="gallery-lightbox__img"
-            src={src}
-            alt={altText}
-            decoding="async"
-            onError={() => {
-              if (fb && src !== fb) setSrc(fb);
-            }}
-          />
+          <img className="gallery-lightbox__img" src={publicPath(shot.src)} alt={altText} decoding="async" />
         </div>
       </div>
     </div>,

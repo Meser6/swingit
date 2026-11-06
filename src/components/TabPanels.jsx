@@ -1,11 +1,11 @@
-import { IMG, imgPair } from "../constants/images";
-import { Reveal } from "../hooks/Reveal";
-import { CONTENT } from "../lib/t.js";
-import { useContentStrings } from "../context/ContentStringsContext.jsx";
+import { IMG } from "../constants/images.js";
+import { Reveal } from "../hooks/Reveal.jsx";
+import pages from "../content/pages.json";
+import contact from "../content/contact.json";
 import { GalleryPanel } from "./GalleryPanel.jsx";
 import { OfferSections } from "./OfferSections.jsx";
 import { OpinionsPanel } from "./OpinionsPanel.jsx";
-import { SmartImage } from "./SmartImage";
+import { SmartImage } from "./SmartImage.jsx";
 import { SocialLinks } from "./SocialLinks.jsx";
 import { YouTubePlaylists } from "./YouTubePlaylists.jsx";
 
@@ -23,39 +23,30 @@ function Panel({ id, active, labelledBy, children }) {
   );
 }
 
-export function TabPanels({ activeTab }) {
-  const { tx } = useContentStrings();
+export function TabPanels({ activeTab, onTab }) {
   const is = (id) => activeTab === id;
-  const s = CONTENT.pages.start;
-  const a = CONTENT.pages.about;
-  const o = CONTENT.pages.offer;
-  const g = CONTENT.pages.gallery;
-  const c = CONTENT.pages.contact;
-  const co = CONTENT.contact;
-  const aboutData = CONTENT.about;
-
-  const bioParagraphs = aboutData.bioLongParagraphs ?? [];
+  const s = pages.start;
+  const a = pages.about;
+  const o = pages.offer;
+  const g = pages.gallery;
+  const op = pages.opinions;
+  const c = pages.contact;
 
   return (
     <div className="tab-panels container">
       <Panel id="start" active={is("start")} labelledBy="tab-start">
-        <h2 className="section-title">{tx("pages.start.title", s.title)}</h2>
-        <p className="section-sub section-sub--wide">{tx("pages.start.sub", s.sub)}</p>
+        <h2 className="section-title">{s.title}</h2>
+        <p className="section-sub section-sub--wide">{s.sub}</p>
         <div className="split">
           <Reveal>
             <div className="media-frame media-frame--natural tile-accent">
-              <SmartImage
-                imageKey="featuresLeft"
-                {...imgPair(IMG.featuresLeft)}
-                alt="SWING IT — prowadzenie imprez"
-                loading="lazy"
-              />
+              <SmartImage src={IMG.featuresLeft} alt="SWING IT — prowadzenie imprez" loading="lazy" />
             </div>
           </Reveal>
           <Reveal>
             <ul className="list-check tile-accent tile-accent--text">
-              {s.listA.map((line, i) => (
-                <li key={line}>{tx(`pages.start.listA[${i}]`, line)}</li>
+              {s.listA.map((line) => (
+                <li key={line}>{line}</li>
               ))}
             </ul>
           </Reveal>
@@ -64,19 +55,14 @@ export function TabPanels({ activeTab }) {
         <div className="split split--reverse-mobile">
           <Reveal>
             <ul className="list-check tile-accent tile-accent--text">
-              {s.listB.map((line, i) => (
-                <li key={line}>{tx(`pages.start.listB[${i}]`, line)}</li>
+              {s.listB.map((line) => (
+                <li key={line}>{line}</li>
               ))}
             </ul>
           </Reveal>
           <Reveal>
             <div className="media-frame media-frame--natural tile-accent">
-              <SmartImage
-                imageKey="featuresRight"
-                {...imgPair(IMG.featuresRight)}
-                alt="SWING IT — oprawa muzyczna"
-                loading="lazy"
-              />
+              <SmartImage src={IMG.featuresRight} alt="SWING IT — oprawa muzyczna" loading="lazy" />
             </div>
           </Reveal>
         </div>
@@ -84,22 +70,24 @@ export function TabPanels({ activeTab }) {
         <Reveal>
           <section className="home-opinions" aria-labelledby="home-opinions-heading">
             <h2 id="home-opinions-heading" className="section-title">
-              {tx("pages.start.opinionsTitle", s.opinionsTitle)}
+              {s.opinionsTitle}
             </h2>
-            <p className="section-sub section-sub--wide">{tx("pages.start.opinionsSub", s.opinionsSub)}</p>
-            <OpinionsPanel contentKey="start" />
+            <p className="section-sub section-sub--wide">{s.opinionsSub}</p>
+            <button type="button" className="btn btn--ghost home-opinions__cta" onClick={() => onTab("opinie")}>
+              {s.opinionsCta}
+            </button>
           </section>
         </Reveal>
       </Panel>
 
       <Panel id="o-mnie" active={is("o-mnie")} labelledBy="tab-o-mnie">
+        <p className="section-eyebrow">{a.eyebrow}</p>
         <div className="split about-intro-split">
           <Reveal>
             <div className="media-frame media-frame--portrait about-portrait tile-accent">
               <SmartImage
-                imageKey="aboutPortrait"
-                {...imgPair(IMG.aboutPortrait)}
-                alt={tx("pages.about.portraitAlt", a.portraitAlt)}
+                src={IMG.aboutPortrait}
+                alt={a.portraitAlt}
                 loading="lazy"
                 className="about-portrait__img"
               />
@@ -107,65 +95,71 @@ export function TabPanels({ activeTab }) {
           </Reveal>
           <Reveal>
             <div className="about-intro-copy tile-accent tile-accent--text">
-              <p className="about-intro-lead">{tx("pages.about.lead", a.lead)}</p>
-              <p>{tx("pages.about.p2", a.p2)}</p>
-              <p>{tx("pages.about.p3", a.p3)}</p>
+              <p className="about-intro-lead">{a.lead}</p>
+              <p>{a.p2}</p>
+              <p>{a.p3}</p>
+              <p>{a.p4}</p>
             </div>
           </Reveal>
         </div>
-
-        <Reveal>
-          <div className="about-bio-long tile-accent tile-accent--text">
-            {bioParagraphs.map((para, i) => (
-              <p key={i}>{tx(`about.bioLongParagraphs[${i}]`, para)}</p>
-            ))}
-          </div>
-        </Reveal>
-
       </Panel>
 
       <Panel id="oferta" active={is("oferta")} labelledBy="tab-oferta">
-        <h2 className="section-title">{tx("pages.offer.title", o.title)}</h2>
-        <p className="section-sub section-sub--wide">{tx("pages.offer.sub", o.sub)}</p>
+        <p className="section-eyebrow">{o.eyebrow}</p>
+        <h2 className="section-title">{o.title}</h2>
+        <p className="section-sub section-sub--wide">{o.sub}</p>
         <OfferSections />
         <YouTubePlaylists />
       </Panel>
 
       <Panel id="galeria" active={is("galeria")} labelledBy="tab-galeria">
-        <h2 className="section-title">{tx("pages.gallery.title", g.title)}</h2>
-        <p className="section-sub section-sub--wide">{tx("pages.gallery.sub", g.sub)}</p>
+        <p className="section-eyebrow">{g.eyebrow}</p>
+        <h2 className="section-title">{g.title}</h2>
+        <p className="section-sub section-sub--wide">{g.sub}</p>
         <GalleryPanel />
       </Panel>
 
+      <Panel id="opinie" active={is("opinie")} labelledBy="tab-opinie">
+        <p className="section-eyebrow">{op.eyebrow}</p>
+        <h2 className="section-title">{op.title}</h2>
+        <p className="section-sub section-sub--wide">{op.sub}</p>
+        <Reveal>
+          <OpinionsPanel showGoogleLink linkLabel={op.wzkLinkLabel} />
+        </Reveal>
+      </Panel>
+
       <Panel id="kontakt" active={is("kontakt")} labelledBy="tab-kontakt">
-        <h2 className="section-title">{tx("pages.contact.title", c.title)}</h2>
-        <p className="section-sub">{tx("pages.contact.sub", c.sub)}</p>
+        <p className="section-eyebrow">{c.eyebrow}</p>
+        <h2 className="section-title">{c.title}</h2>
+        <p className="section-sub">{c.sub}</p>
         <div className="split">
-          <Reveal className="card contact-card tile-accent tile-accent--text" style={{ padding: "1.5rem" }}>
-            <p>
-              <strong>{tx("pages.contact.phoneLabel", c.phoneLabel)}</strong>
+          <Reveal className="card contact-card tile-accent tile-accent--text">
+            <p className="contact-card__row">
+              <strong>{c.phoneLabel}</strong>
               <br />
-              <a href={`tel:${co.phoneTel}`}>{tx("contact.phoneDisplay", co.phoneDisplay)}</a>
+              <a href={`tel:${contact.phoneTel}`}>{contact.phoneDisplay}</a>
             </p>
-            <p>
-              <strong>{tx("pages.contact.emailLabel", c.emailLabel)}</strong>{" "}
-              <a href={`mailto:${co.email}`}>{tx("contact.email", co.email)}</a>
+            <p className="contact-card__row">
+              <strong>{c.emailLabel}</strong>
+              <br />
+              <a href={`mailto:${contact.email}`}>{contact.email}</a>
             </p>
-            <h3 className="contact-card__subhead">{tx("pages.contact.socialHeading", c.socialHeading)}</h3>
+            <h3 className="contact-card__subhead">{c.socialHeading}</h3>
             <SocialLinks className="social-links social-links--stacked" />
             <div className="contact-inquiry">
-              <h3 className="contact-inquiry__title">{tx("pages.contact.inquiryTitle", c.inquiryTitle)}</h3>
-              <p className="contact-inquiry__text">{tx("pages.contact.inquiryText", c.inquiryText)}</p>
+              <h3 className="contact-inquiry__title">{c.inquiryTitle}</h3>
+              <p className="contact-inquiry__text">{c.inquiryIntro}</p>
+              <ul className="list-check">
+                {c.inquiryPoints.map((point) => (
+                  <li key={point}>{point}</li>
+                ))}
+              </ul>
+              <p className="contact-inquiry__text">{c.inquiryOutro}</p>
             </div>
           </Reveal>
           <Reveal>
             <div className="media-frame media-frame--natural tile-accent">
-              <SmartImage
-                imageKey="contactVisual"
-                {...imgPair(IMG.contactVisual)}
-                alt={tx("pages.contact.visualAlt", c.visualAlt)}
-                loading="lazy"
-              />
+              <SmartImage src={IMG.contactVisual} alt={c.visualAlt} loading="lazy" />
             </div>
           </Reveal>
         </div>

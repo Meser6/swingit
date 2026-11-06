@@ -4,6 +4,8 @@ export const YOUTUBE_URL = "https://youtube.com/@djbartlomiejnawrot";
 export const FACEBOOK_URL = "https://www.facebook.com/djbartlomiejnawrot/";
 export const INSTAGRAM_URL = "https://www.instagram.com/djbartlomiejnawrot/";
 export const TIKTOK_URL = "https://www.tiktok.com/@djbartlomiejnawrot";
+export const GOOGLE_REVIEWS_URL =
+  "https://www.google.com/search?q=SWING+IT+Bart%C5%82omiej+Nawrot+DJ+opinie";
 
 export const SOCIAL_LINKS = [
   { id: "wzk", label: "Wesele z klasą", url: WESELE_Z_KLASA_URL },
