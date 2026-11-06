@@ -489,7 +489,8 @@ button {
 }
 
 .tab-panels {
-  padding: clamp(2.5rem, 6vw, 4.5rem) 0 clamp(4rem, 8vw, 6rem);
+  padding-top: clamp(2.5rem, 6vw, 4.5rem);
+  padding-bottom: clamp(4rem, 8vw, 6rem);
 }
 
 .tab-panel {
