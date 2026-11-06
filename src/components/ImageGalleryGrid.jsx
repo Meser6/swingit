@@ -15,6 +15,9 @@ export function ImageGalleryGrid({ items }) {
     return <p className="gallery-empty">Brak zdjęć w tej kategorii.</p>;
   }
 
+  const goNext = () => setLightboxIndex((i) => (i + 1) % items.length);
+  const goPrev = () => setLightboxIndex((i) => (i - 1 + items.length) % items.length);
+
   return (
     <div className="gallery-grid" role="region" aria-label="Galeria zdjęć">
       {lightboxShot != null ? (
@@ -22,6 +25,8 @@ export function ImageGalleryGrid({ items }) {
           shot={lightboxShot}
           altText={lightboxShot.alt}
           onClose={() => setLightboxIndex(null)}
+          onNext={items.length > 1 ? goNext : undefined}
+          onPrev={items.length > 1 ? goPrev : undefined}
           dialogAria="Powiększone zdjęcie"
           closeLabel="Zamknij powiększone zdjęcie"
         />

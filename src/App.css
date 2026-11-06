@@ -530,6 +530,10 @@ button {
   gap: 1.3rem;
 }
 
+.list-check.tile-accent--text {
+  padding: clamp(1.9rem, 3.6vw, 2.8rem);
+}
+
 .list-check li {
   position: relative;
   padding-left: 2.3rem;
@@ -825,6 +829,54 @@ button {
 .gallery-lightbox__close:hover {
   background: var(--gold-soft);
   border-color: var(--gold);
+}
+
+.gallery-lightbox__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: rgba(14, 12, 9, 0.75);
+  color: var(--cream);
+  font-size: 1.9rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.gallery-lightbox__nav:hover {
+  background: var(--gold-soft);
+  border-color: var(--gold);
+}
+
+.gallery-lightbox__nav--prev {
+  left: -1rem;
+}
+
+.gallery-lightbox__nav--next {
+  right: -1rem;
+}
+
+@media (max-width: 720px) {
+  .gallery-lightbox__nav {
+    width: 2.4rem;
+    height: 2.4rem;
+    font-size: 1.5rem;
+  }
+
+  .gallery-lightbox__nav--prev {
+    left: 0.3rem;
+  }
+
+  .gallery-lightbox__nav--next {
+    right: 0.3rem;
+  }
 }
 
 /* ==========================================================================
