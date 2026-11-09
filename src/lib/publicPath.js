@@ -1,4 +1,4 @@
-/** Ścieżki z `public/` — poprawny prefiks na GitHub Pages (`/swingit/`). */
+/** Ścieżki z `public/` — poprawny prefiks zgodny z `base` z vite.config.js. */
 export function publicPath(path) {
   if (path == null || path === "") return path;
   const s = String(path).trim();
